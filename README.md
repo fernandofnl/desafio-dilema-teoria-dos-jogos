@@ -29,6 +29,7 @@ Semelhante a Olho por olho, exceto que o oponente necessita fazer a mesma escolh
 d)	Provador Ingênuo
 
 Repete a última escolha do oponente (como em Olho por Olho), mas às vezes trai no lugar de cooperação, ou seja, jogador coopera ou trai de acordo com as ações do jogador, mas trai de forma aleatória.
+
 e)	Retalhador Permanente.
 
 Coopera até o oponente trair e caso isto ocorra sempre escolherá a opção de trair. 
