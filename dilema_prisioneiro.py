@@ -1,7 +1,7 @@
 import random
 
 menu = f"""
-==== Dilme do Prisioneiro ====
+==== Dilema do Prisioneiro ====
 
 --- Bem-vindo ao jogo ---
 Escolha uma opção de jogo:
@@ -66,21 +66,25 @@ while programa:
 
                 print(f"\nAmbos os jogadores escolheram trair.")
                 contador_trair_trair += 1
+                escolheu_trair += 1
 
             elif decisao_jogador == 1 and escolha_computador == 2:
 
                 print(f"\nVocê escolheu trair e o seu parceiro escolheu cooperar.")
                 contador_trair_cooperar += 1
+                escolheu_trair += 1
 
             elif decisao_jogador == 2 and escolha_computador == 1:
 
                 print(f"\nVocê escolheu cooperar e seu parceiro escolheu trair.")
                 contador_cooperar_trair += 1
+                escolheu_cooperar += 1
 
             elif decisao_jogador == 2 and escolha_computador == 2:
 
                 print(f"\nAmbos os jogadores escolheram cooperar.")
                 contador_cooperar_cooperar += 1
+                escolheu_cooperar += 1
 
             jogar_novamente = int(input(f"\nVocê deseja jogar novamente? 1. Sim ou 2. Não: "))
 
@@ -104,24 +108,28 @@ while programa:
                 print(f"\nAmbos os jogadores escolheram trair.")
                 escolha_computador = 1
                 contador_trair_trair += 1
+                escolheu_trair += 1
 
             elif decisao_jogador == 1 and escolha_computador == 2:
 
                 print(f"\nVocê escolheu trair e o seu parceiro escolheu cooperar.")
                 escolha_computador = 1
                 contador_trair_cooperar += 1
+                escolheu_trair += 1
 
             elif decisao_jogador == 2 and escolha_computador == 1:
 
                 print(f"\nVocê escolheu cooperar e seu parceiro escolheu trair.")
                 escolha_computador = 2
                 contador_cooperar_trair += 1
+                escolheu_cooperar += 1
 
             elif decisao_jogador == 2 and escolha_computador == 2:
 
                 print(f"\nAmbos os jogadores escolheram cooperar.")
                 escolha_computador = 2
                 contador_cooperar_cooperar += 1
+                escolheu_cooperar += 1
 
             jogar_novamente = int(input(f"\nVocê deseja jogar novamente? 1. Sim ou 2. Não: "))
 
@@ -150,6 +158,7 @@ while programa:
                 escolha_computador = 1
                 contador_trair_trair += 1
                 contador_de_traicao += 1
+                escolheu_trair += 1
 
             elif decisao_jogador == 1 and escolha_computador == 2:
 
@@ -157,6 +166,7 @@ while programa:
                 escolha_computador = 1
                 contador_trair_cooperar += 1
                 contador_de_traicao += 1
+                escolheu_trair += 1
 
             elif decisao_jogador == 2 and escolha_computador == 1:
 
@@ -164,6 +174,7 @@ while programa:
                 escolha_computador = 2
                 contador_cooperar_trair += 1
                 contador_de_traicao = 0
+                escolheu_cooperar += 1
 
             elif decisao_jogador == 2 and escolha_computador == 2:
 
@@ -171,15 +182,112 @@ while programa:
                 escolha_computador = 2
                 contador_cooperar_cooperar += 1
                 contador_de_traicao = 0
+                escolheu_cooperar += 1
+
+            jogar_novamente = int(input(f"\nVocê deseja jogar novamente? 1. Sim ou 2. Não: "))
+
+            if jogar_novamente == 2:
+                break
+
+    elif opcao_de_jogo == 4:
+
+        escolha_computador = random.randint(1, 2)
+
+        while True:
+
+            print(f"\n==== Provador Ingênuo ====")
+            numero_partidas += 1
+            contador_provador_ingenuo += 1
+            
+            decisao_jogador = int(input("Qual sua decisão? 1. Trair ou 2. Cooperar: "))
+
+            if escolheu_cooperar > 0:
+                if (numero_partidas / escolheu_cooperar) % 2 == 0:
+                    escolha_computador = 1            
+
+            if decisao_jogador == 1 and escolha_computador == 1:
+
+                print(f"\nAmbos os jogadores escolheram trair.")
+                escolha_computador = 1
+                contador_trair_trair += 1
+                escolheu_trair += 1
+
+            elif decisao_jogador == 1 and escolha_computador == 2:
+
+                print(f"\nVocê escolheu trair e o seu parceiro escolheu cooperar.")
+                escolha_computador = 1
+                contador_trair_cooperar += 1
+                escolheu_trair += 1
+
+            elif decisao_jogador == 2 and escolha_computador == 1:
+
+                print(f"\nVocê escolheu cooperar e seu parceiro escolheu trair.")
+                escolha_computador = 2
+                contador_cooperar_trair += 1
+                escolheu_cooperar += 1
+
+            elif decisao_jogador == 2 and escolha_computador == 2:
+
+                print(f"\nAmbos os jogadores escolheram cooperar.")
+                escolha_computador = 2
+                contador_cooperar_cooperar += 1
+                escolheu_cooperar += 1
+
+
+            jogar_novamente = int(input(f"\nVocê deseja jogar novamente? 1. Sim ou 2. Não: "))
+
+            if jogar_novamente == 2:
+                break
+
+    elif opcao_de_jogo == 5:
+
+        escolha_computador = 2
+
+        while True:
+
+            print(f"\n==== Retalhador permanente ====")
+            numero_partidas += 1
+            contador_retalhador_permanente += 1
+            
+            decisao_jogador = int(input("Qual sua decisão? 1. Trair ou 2. Cooperar: "))          
+
+            if decisao_jogador == 1 and escolha_computador == 1:
+
+                print(f"\nAmbos os jogadores escolheram trair.")
+                escolha_computador = 1
+                contador_trair_trair += 1
+                escolheu_trair += 1
+
+            elif decisao_jogador == 1 and escolha_computador == 2:
+
+                print(f"\nVocê escolheu trair e o seu parceiro escolheu cooperar.")
+                escolha_computador = 1
+                contador_trair_cooperar += 1
+                escolheu_trair += 1
+
+            elif decisao_jogador == 2 and escolha_computador == 1:
+
+                print(f"\nVocê escolheu cooperar e seu parceiro escolheu trair.")
+                contador_cooperar_trair += 1
+                escolheu_cooperar += 1
+
+            elif decisao_jogador == 2 and escolha_computador == 2:
+
+                print(f"\nAmbos os jogadores escolheram cooperar.")
+                contador_cooperar_cooperar += 1
+                escolheu_cooperar += 1
+
 
             jogar_novamente = int(input(f"\nVocê deseja jogar novamente? 1. Sim ou 2. Não: "))
 
             if jogar_novamente == 2:
                 break
     
+    
     elif opcao_de_jogo == 0:
 
         programa = False
+        
         relatorio = f"""
 ==== Relatorio ====
 
